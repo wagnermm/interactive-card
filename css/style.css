@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -5,13 +6,10 @@
 }
 html {
     font-size: 62.5%;
-    font-family: Arial, Helvetica, sans-serif;
-}
-body {
-    width: 100%;
-    height: 100%;
+    font-family: Space, Grotesk;
 }
 .container {
+    position: relative;
     max-width: 100%;
     height: 100vh;
     display: flex;
@@ -19,15 +17,13 @@ body {
     justify-content: center;
 }
 .content-left {
-    position: relative;
     width: 40%;
-    height: 100vh;
-    background: #32014e;
+    height: 100%;
+    background: linear-gradient(-200deg, rgba(33,8,47,1) 0%, rgba(84,31,59,1) 22%, rgba(33,8,45,1) 81%);
 }
 .content-right {
-    position: relative;
-    width: 60%;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -95,11 +91,237 @@ input {
 button:hover {
     background-color: #060227;
 }
-
-
+.card-front {
+    position: absolute;
+    top: 15vh;
+    left: 10vw;
+    width: 350px;
+    height: 180px;
+    padding: 1rem;
+    background: linear-gradient(120deg, rgba(96,5,148,1) 0%, rgba(34,198,185,1) 65%, rgba(100,72,254,1) 78%);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.ether-card {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: flex-start;
+    z-index: 1;
+}
+.ether-1 {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: #fff;
+}
+.ether-2 {
+    margin-top: 9px;
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    border: 1px solid #fff;
+}
+.number-card {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    color: #fff;
+    z-index: 1;
+}
+.infoFooter-card {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    color: #fff;
+    z-index: 1;
+}
+.card-back {
+    position: absolute;
+    bottom: 20vh;
+    left: 20vw;
+    width: 350px;
+    height: 180px;
+    background-color: #ccc;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.belt-card-1 {
+    width: 100%;
+    height: 30px;
+    background-color: #333;
+}
+.belt-card2 {
+    width: 80%;
+    height: 30px;
+    padding-right: 1rem;
+    letter-spacing: 2px;
+    background-color: #aaa;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    border-radius: 5px;
+}
+.writing-card {
+    width: 60%;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.writing-line1, .writing-line2,
+.writing-line3 {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.writing-content1 {
+    width: 100px;
+    height: 3px;
+    background-color: #aaa;
+    border-radius: 5px;
+}
+.writing-content2 {
+    width: 20px;
+    height: 3px;
+    background-color: #aaa;
+    border-radius: 5px;
+}
+.writing-content3 {
+    width: 20px;
+    height: 3px;
+    background-color: #aaa;
+    border-radius: 5px;
+}
+.writing-content4 {
+    width: 10px;
+    height: 3px;
+    background-color: #aaa;
+    border-radius: 5px;
+}
+.writing-content5 {
+    width: 20px;
+    height: 3px;
+    background-color: #aaa;
+    border-radius: 5px;
+}
+.writing-content6 {
+    width: 60px;
+    height: 3px;
+    background-color: #aaa;
+    border-radius: 5px;
+}
+.writing-content7 {
+    width: 50px;
+    height: 3px;
+    background-color: #aaa;
+    border-radius: 5px;
+}
+.writing-content8 {
+    width: 10px;
+    height: 3px;
+    background-color: #aaa;
+    border-radius: 5px;
+}
+.writing-content9 {
+    width: 10px;
+    height: 3px;
+    background-color: #aaa;
+    border-radius: 5px;
+}
+.writing-content10, .writing-content11 {
+    width: 20px;
+    height: 3px;
+    background-color: #aaa;
+    border-radius: 5px;
+}
+.writing-content12 {
+    width: 100px;
+    height: 3px;
+    background-color: #aaa;
+    border-radius: 5px;
+}
 .attribution {
-    margin-top: 4rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    text-align: center;
+    background-color: #bbb;
+    padding: 0.5rem;
     font-size: 12px; text-align: center; 
+}
+.thank {
+    width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    visibility: hidden;
+}
+.thank-ether {
+    width: 50px;
+    height: 50px;
+    padding: 1.4rem;
+    border-radius: 50px;
+    background: linear-gradient(120deg, rgba(96,5,148,1) 0%, rgba(100,72,254,1) 78%);
+    color: #fff;
+    font-size: 2.2rem;
+}
+.thank-content h1 {
+    font-size: 2.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+}
+.thank-content p {
+    font-size: 1.4rem;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 1px;
+    color: #777;
+    font-weight: bolder;
+}
+.thank-button {
+    margin-top: 2rem;
+    width: 100%;
+}
+.thank-button button {
+    width: 100%;
+    height: 4rem;
+    background-color: #080130;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.thank-button button:hover {
+    background-color: #060227;
+}
+.attribution p {
+    font-weight: bolder;
 }
 .attribution a {
     color: hsl(228, 45%, 44%);

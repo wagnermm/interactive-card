@@ -16,38 +16,85 @@
           <label for="name">Cardholder Name</label>
           <input type="text" id="name" placeholder="e.g. Jane Appleseed">
           <label for="number">Card Number</label>
-          <input type="text" id="number" placeholder="e.g. 1234 5678 9123 0000">
+          <input type="text" id="number" placeholder="e.g. 1234 5678 9123 0000" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
         </div>
         <div class="space-validation2">
           <div class="date-field" id="date-field">
             <label for="text">Exp. Date (MM/YY)</label>
             <div class="date-field-inputs">
-              <input type="text" id="month" placeholder="MM" maxlength="2">
-              <input type="text" id="year" placeholder="YY" maxlength="2">
+              <input type="text" id="month" placeholder="MM" maxlength="2" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+              <input type="text" id="year" placeholder="YY" maxlength="2" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
             </div>
           </div>
           <div class="code-field" id="code-field">
             <label for="code"> CVC</label>
-            <input type="text" id="code" placeholder="e.g. 123" maxlength="3">
+            <input type="text" id="code" placeholder="e.g. 123" maxlength="3" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
           </div>
         </div>
         <div class="button-container">
           <button id="button">Confirm</button>
         </div>
       </form>
+      <div class="thank">
+        <div class="thank-ether"><i class="fa-solid fa-check"></i></div>
+        <div class="thank-content">
+          <h1>THANK YOU!</h1>
+          <p>We`ve added your card details</p>
+        </div>
+        <div class="thank-button">
+          <button id="button">Continue</button>
+        </div>
+      </div>
     </div>
     <div class="card-front">
-      0000 0000 0000 0000
-      Jane Appleseed
-      00/00
+      <div class="ether-card">
+        <div class="ether-1"></div>
+        <div class="ether-2"></div>
+      </div>
+      <div class="number-card" id="number-card">
+        0000 0000 0000 0000
+      </div>
+      <div class="infoFooter-card">
+        <div class="namePeople-card">
+          Jane Appleseed
+        </div>
+        <div class="dataValid-card">
+          00/00
+        </div>
+      </div>
     </div>
     <div class="card-back">
-      000
+      <div class="belt-card-1"></div>
+      <div class="belt-card2">
+        000
+      </div>
+      <div class="writing-card">
+        <div class="writing-line1">
+          <div class="writing-content1"></div>
+          <div class="writing-content2"></div>
+          <div class="writing-content3"></div>
+          <div class="writing-content4"></div>
+        </div>
+        <div class="writing-line2">
+          <div class="writing-content5"></div>
+          <div class="writing-content6"></div>
+          <div class="writing-content7"></div>
+          <div class="writing-content8"></div>
+        </div>
+        <div class="writing-line3">
+          <div class="writing-content9"></div>
+          <div class="writing-content10"></div>
+          <div class="writing-content11"></div>
+          <div class="writing-content12"></div>
+        </div>
+      </div>
     </div>
   </section>
   <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Wagner Miranda</a>.
+    <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="blank">Frontend Mentor</a>.</p>
+    <p>Coded by <a href="#">Wagner Miranda</a>.</p>
   </footer>
+
+  <script src="https://kit.fontawesome.com/cc8f61138a.js" crossorigin="anonymous"></script>
 </body>
 </html>
