@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Interactive card details form</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <section class="container">
+    <div class="content-left"></div>
+    <div class="content-right">
+      <form class="form">
+        <div class="space-validation1">
+          <label for="name">Cardholder Name</label>
+          <input type="text" id="name" placeholder="e.g. Jane Appleseed">
+          <label for="number">Card Number</label>
+          <input type="text" id="number" placeholder="e.g. 1234 5678 9123 0000">
+        </div>
+        <div class="space-validation2">
+          <div class="date-field" id="date-field">
+            <label for="text">Exp. Date (MM/YY)</label>
+            <div class="date-field-inputs">
+              <input type="text" id="month" placeholder="MM" maxlength="2">
+              <input type="text" id="year" placeholder="YY" maxlength="2">
+            </div>
+          </div>
+          <div class="code-field" id="code-field">
+            <label for="code"> CVC</label>
+            <input type="text" id="code" placeholder="e.g. 123" maxlength="3">
+          </div>
+        </div>
+        <div class="button-container">
+          <button id="button">Confirm</button>
+        </div>
+      </form>
+    </div>
+    <div class="card-front">
+      0000 0000 0000 0000
+      Jane Appleseed
+      00/00
+    </div>
+    <div class="card-back">
+      000
+    </div>
+  </section>
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Wagner Miranda</a>.
+  </footer>
+</body>
+</html>
