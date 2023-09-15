@@ -32,6 +32,7 @@ html {
     background-color: #fff;
 }
 .form {
+    margin-top: 5rem;
     width: 350px;
     height: auto;
     display: flex;
@@ -61,6 +62,11 @@ html {
     display: flex;
     flex-direction: row;
 }
+.date-field-format {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 label {
     font-size: 1.2rem;
     font-weight: 700;
@@ -72,8 +78,8 @@ input {
     height: 3rem;
     outline: none;
     border: 1px solid #ddd;
-    margin-bottom: 2rem;
     border-radius: 5px;
+    margin-bottom: 0.5rem;
 }
 .button-container {
     margin-top: 2rem;
@@ -325,4 +331,20 @@ button:hover {
 }
 .attribution a {
     color: hsl(228, 45%, 44%);
+}
+.erro-name, .erro-number,
+.erro-month, .erro-year,
+.erro-code {
+    font-size: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ff5252;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+}
+.input-clicked {
+    border-color: #080130;
+}
+.erro {
+    border-color: #ff5252;
 }
