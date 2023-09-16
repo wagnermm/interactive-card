@@ -1,26 +1,30 @@
+// Select elements
+let nameInput = document.querySelectorAll('input#name');
+let numberInput = document.querySelectorAll('input#number');
+let monthInput = document.querySelectorAll('input#month');
+let yearInput = document.querySelectorAll('input#year');
+let codeInput = document.querySelectorAll('input#code');
+let form = document.getElementById('form');
+let btnForm = document.getElementById('submit-form');
+
 // Input clicked
 const inputClicked = (element)=> {
     element.addEventListener('click', function() {
         this.classList.add('input-clicked');
     });
 };
-let nameInput = document.querySelectorAll('input#name');
 for( let emFoco of nameInput ) {
     inputClicked(emFoco);
 };
-let numberInput = document.querySelectorAll('input#number');
 for( let emFoco of numberInput ) {
     inputClicked(emFoco);
 };
-let monthInput = document.querySelectorAll('input#month');
 for( let emFoco of monthInput ) {
     inputClicked(emFoco);
 };
-let yearInput = document.querySelectorAll('input#year');
 for( let emFoco of yearInput ) {
     inputClicked(emFoco);
 };
-let codeInput = document.querySelectorAll('input#code');
 for( let emFoco of codeInput ) {
     inputClicked(emFoco);
 };
@@ -41,7 +45,8 @@ for( let emFoco of nameInput ) {
     inputNameValid(emFoco);
 };
 
-function lettersOnly(evt) {
+// Letters only
+const lettersOnly = (evt)=> {
     evt = (evt) ? evt : event;
     var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode : ((evt.which) ? evt.which : 0));
     if (charCode > 31 && (charCode < 65 || charCode > 90) && (charCode < 97 || charCode > 122)) {
@@ -69,14 +74,15 @@ for( let emFoco of numberInput ) {
 };
 
 // Input valid month
+let monthValid = /^[0-9]{2}$/;
 const inputMonthValid = (element)=> {
     element.addEventListener('focusout', function() {
-        if(this.value == "") {
-            document.querySelector('.erro-month').innerHTML = "Can`t be blank";
-            this.classList.add('erro');
-        } else {
+        if(this.value.match(monthValid)) {
             document.querySelector('.erro-month').innerHTML = "";
             this.classList.remove('erro');
+        } else {
+            document.querySelector('.erro-month').innerHTML = "Can`t be blank";
+            this.classList.add('erro');
         };
     });
 };
@@ -85,14 +91,15 @@ for( let emFoco of monthInput ) {
 };
 
 // Input valid year
+let yearValid = /^[0-9]{2}$/;
 const inputYearValid = (element)=> {
     element.addEventListener('focusout', function() {
-        if(this.value == "") {
-            document.querySelector('.erro-year').innerHTML = "";
-            this.classList.add('erro');
-        } else {
+        if(this.value.match(yearValid)) {
             document.querySelector('.erro-year').innerHTML = "";
             this.classList.remove('erro');
+        } else {
+            document.querySelector('.erro-year').innerHTML = "";
+            this.classList.add('erro');
         };
     });
 };
@@ -101,17 +108,20 @@ for( let emFoco of yearInput ) {
 };
 
 // Input valid code
+let codeValid = /^[0-9]{3}$/;
 const inputCodeValid = (element)=> {
     element.addEventListener('focusout', function() {
-        if(this.value == "") {
-            document.querySelector('.erro-code').innerHTML = "Can`t be blank";
-            this.classList.add('erro');
-        } else {
+        if(this.value.match(codeValid)) {
             document.querySelector('.erro-code').innerHTML = "";
             this.classList.remove('erro');
+        } else {
+            document.querySelector('.erro-code').innerHTML = "Can`t be blank";
+            this.classList.add('erro');
         };
     });
 };
 for( let emFoco of codeInput ) {
     inputCodeValid(emFoco);
 };
+
+// Valid submit
