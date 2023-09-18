@@ -6,6 +6,8 @@ let yearInput = document.querySelectorAll('input#year');
 let codeInput = document.querySelectorAll('input#code');
 let form = document.getElementById('form');
 let btnForm = document.getElementById('submit-form');
+let thank = document.getElementById('thank');
+let button = document.getElementById('button');
 
 // Input clicked
 const inputClicked = (element)=> {
@@ -124,35 +126,67 @@ for( let emFoco of codeInput ) {
     inputCodeValid(emFoco);
 };
 
-// Input transfer
+// Input transfer name
 const inputTransferNumber =()=> {
     const number = document.querySelector('#number');
     const numberCard = document.querySelector('#number-card');
     numberCard.value = number.value;
 };
-
+// Input transfer number
 const inputTransferName =()=> {
     const name = document.querySelector('#name');
     const nameCard = document.querySelector('#namePeople-card');
     nameCard.value = name.value;
 };
-
+// Input transfer month
 const inputTransferMonth =()=> {
     const month = document.querySelector('#month');
     const monthCard = document.querySelector('#monthValue');
     monthCard.value = month.value;
 };
-
+// Input transfer year
 const inputTransferYear =()=> {
     const year = document.querySelector('#year');
     const yearCard = document.querySelector('#yearValue');
     yearCard.value = year.value;
 };
-
+// Input transfer code
 const inputTransferCode =()=> {
     const code = document.querySelector('#code');
     const codeCard = document.querySelector('#card-code');
     codeCard.value = code.value;
 };
 
-// Valid submit
+// Button abled
+const buttonAbled = ()=> {
+    const name = document.getElementById('name').value;
+    const number = document.getElementById('number').value;
+    const month = document.getElementById('month').value;
+    const year = document.getElementById('year').value;
+    const code = document.getElementById('code').value;
+    if(name.match(nameValid) && number.match(numberValid) && month.match(monthValid) &&
+    year.match(yearValid) && code.match(codeValid)) {
+        btnForm.disabled = false;
+        return
+    } else {
+        btnForm.disabled = true;
+    };
+};
+
+// Submit form
+btnForm.addEventListener('click', function() {
+    if(nameInput && numberInput && monthInput && yearInput && codeInput) {
+        btnForm.disabled = true;
+        form.style.display="none";
+        thank.style.display="flex";
+    } else {
+        btnForm.disabled = false;
+        form.style.display="flex";
+        thank.style.visibility="none";
+    }
+});
+
+// Reload
+button.addEventListener('click', function() {
+    location.reload();
+});

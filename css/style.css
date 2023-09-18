@@ -97,6 +97,10 @@ input {
 button:hover {
     background-color: #060227;
 }
+button:disabled {
+    opacity: 70%;
+    cursor: auto;
+}
 .card-front {
     position: absolute;
     top: 15vh;
@@ -329,12 +333,12 @@ button:hover {
 .thank {
     width: 300px;
     height: auto;
-    display: flex;
+    margin-left: 10vw;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    visibility: hidden;
 }
 .thank-ether {
     width: 50px;

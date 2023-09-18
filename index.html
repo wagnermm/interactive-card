@@ -14,10 +14,10 @@
       <form class="form" id="form">
         <div class="space-validation1">
           <label for="name">Cardholder Name</label>
-          <input type="text" id="name" placeholder="e.g. Jane Appleseed" maxlength="35" onkeyup="inputTransferName()" required>
+          <input type="text" id="name" placeholder="e.g. Jane Appleseed" maxlength="35" onkeyup="inputTransferName()" onchange="buttonAbled()">
           <span class="erro-name"></span>
           <label for="number">Card Number</label>
-          <input type="text" id="number" placeholder="e.g. 1234 5678 9123 0000" maxlength="19" onkeyup="inputTransferNumber()">
+          <input type="text" id="number" placeholder="e.g. 1234 5678 9123 0000" maxlength="19" onkeyup="inputTransferNumber()" onchange="buttonAbled()">
           <span class="erro-number"></span>
         </div>
         <div class="space-validation2">
@@ -25,26 +25,26 @@
             <label for="text">Exp. Date (MM/YY)</label>
             <div class="date-field-inputs">
               <div class="date-field-format">
-                <input type="text" id="month" placeholder="MM" maxlength="2" onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="inputTransferMonth()">
+                <input type="text" id="month" placeholder="MM" maxlength="2" onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="inputTransferMonth()" onchange="buttonAbled()">
               <span class="erro-month"></span>
               </div>
               <div class="date-field-format">
-                <input type="text" id="year" placeholder="YY" maxlength="2" onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="inputTransferYear()">
+                <input type="text" id="year" placeholder="YY" maxlength="2" onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="inputTransferYear()" onchange="buttonAbled()">
               <span class="erro-year"></span>
               </div>
             </div>
           </div>
           <div class="code-field" id="code-field">
             <label for="code"> CVC</label>
-            <input type="text" id="code" placeholder="e.g. 123" maxlength="3" onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="inputTransferCode()">
+            <input type="text" id="code" placeholder="e.g. 123" maxlength="3" onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="inputTransferCode()" onchange="buttonAbled()">
             <span class="erro-code"></span>
           </div>
         </div>
         <div class="button-container">
-          <button id="submit-form">Confirm</button>
+          <button id="submit-form" disabled>Confirm</button>
         </div>
       </form>
-      <div class="thank">
+      <div class="thank" id="thank">
         <div class="thank-ether"><i class="fa-solid fa-check"></i></div>
         <div class="thank-content">
           <h1>THANK YOU!</h1>
