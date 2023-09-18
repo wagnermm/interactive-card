@@ -30,14 +30,18 @@ for( let emFoco of codeInput ) {
 };
 
 // Input valid name
+let nameValid = /^[a-zA-Z\s]+$/;
 const inputNameValid = (element)=> {
     element.addEventListener('focusout', function() {
-        if(this.value == "") {
+        if(this.value.match(nameValid)) {
+            document.querySelector('.erro-name').innerHTML = "";
+            this.classList.remove('erro');
+        } else if(this.value == "") {
             document.querySelector('.erro-name').innerHTML = "Can`t be blank";
             this.classList.add('erro');
         } else {
-            document.querySelector('.erro-name').innerHTML = "";
-            this.classList.remove('erro');
+            document.querySelector('.erro-name').innerHTML = "Wrong format, letters only";
+            this.classList.add('erro');
         };
     });
 };
@@ -45,26 +49,19 @@ for( let emFoco of nameInput ) {
     inputNameValid(emFoco);
 };
 
-// Letters only
-const lettersOnly = (evt)=> {
-    evt = (evt) ? evt : event;
-    var charCode = (evt.charCode) ? evt.charCode : ((evt.keyCode) ? evt.keyCode : ((evt.which) ? evt.which : 0));
-    if (charCode > 31 && (charCode < 65 || charCode > 90) && (charCode < 97 || charCode > 122)) {
-        return false;
-    }
-    return true;
-};
-
 // Input valid number
-let numberValid = /^[0-9]{16}$/;
+let numberValid = /^\d{4} \d{4} \d{4} \d{4}$/;
 const inputNumberValid = (element)=> {
     element.addEventListener('focusout', function() {
         if(this.value.match(numberValid)) {
             document.querySelector('.erro-number').innerHTML = "";
             this.classList.remove('erro');
             return false;
+        } else if(this.value == "") {
+            document.querySelector('.erro-number').innerHTML = "Can`t be blank";
+            this.classList.add('erro');
         } else {
-            document.querySelector('.erro-number').innerHTML = "Wrong format, numbers only";
+            document.querySelector('.erro-number').innerHTML = "Wrong format";
             this.classList.add('erro');
         };
     });
@@ -74,14 +71,17 @@ for( let emFoco of numberInput ) {
 };
 
 // Input valid month
-let monthValid = /^[0-9]{2}$/;
+let monthValid = /^(0[1-9]|1[0-2])$/;
 const inputMonthValid = (element)=> {
     element.addEventListener('focusout', function() {
         if(this.value.match(monthValid)) {
             document.querySelector('.erro-month').innerHTML = "";
             this.classList.remove('erro');
-        } else {
+        } else if(this.value == "") {
             document.querySelector('.erro-month').innerHTML = "Can`t be blank";
+            this.classList.add('erro');
+        } else {
+            document.querySelector('.erro-month').innerHTML = "Wrong format";
             this.classList.add('erro');
         };
     });
@@ -122,6 +122,37 @@ const inputCodeValid = (element)=> {
 };
 for( let emFoco of codeInput ) {
     inputCodeValid(emFoco);
+};
+
+// Input transfer
+const inputTransferNumber =()=> {
+    const number = document.querySelector('#number');
+    const numberCard = document.querySelector('#number-card');
+    numberCard.value = number.value;
+};
+
+const inputTransferName =()=> {
+    const name = document.querySelector('#name');
+    const nameCard = document.querySelector('#namePeople-card');
+    nameCard.value = name.value;
+};
+
+const inputTransferMonth =()=> {
+    const month = document.querySelector('#month');
+    const monthCard = document.querySelector('#monthValue');
+    monthCard.value = month.value;
+};
+
+const inputTransferYear =()=> {
+    const year = document.querySelector('#year');
+    const yearCard = document.querySelector('#yearValue');
+    yearCard.value = year.value;
+};
+
+const inputTransferCode =()=> {
+    const code = document.querySelector('#code');
+    const codeCard = document.querySelector('#card-code');
+    codeCard.value = code.value;
 };
 
 // Valid submit

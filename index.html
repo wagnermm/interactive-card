@@ -14,10 +14,10 @@
       <form class="form" id="form">
         <div class="space-validation1">
           <label for="name">Cardholder Name</label>
-          <input type="text" id="name" placeholder="e.g. Jane Appleseed" maxlength="35" onkeypress="return lettersOnly(event);" required>
+          <input type="text" id="name" placeholder="e.g. Jane Appleseed" maxlength="35" onkeyup="inputTransferName()" required>
           <span class="erro-name"></span>
           <label for="number">Card Number</label>
-          <input type="text" id="number" placeholder="e.g. 1234 5678 9123 0000" maxlength="16">
+          <input type="text" id="number" placeholder="e.g. 1234 5678 9123 0000" maxlength="19" onkeyup="inputTransferNumber()">
           <span class="erro-number"></span>
         </div>
         <div class="space-validation2">
@@ -25,18 +25,18 @@
             <label for="text">Exp. Date (MM/YY)</label>
             <div class="date-field-inputs">
               <div class="date-field-format">
-                <input type="text" id="month" placeholder="MM" maxlength="2" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                <input type="text" id="month" placeholder="MM" maxlength="2" onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="inputTransferMonth()">
               <span class="erro-month"></span>
               </div>
               <div class="date-field-format">
-                <input type="text" id="year" placeholder="YY" maxlength="2" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                <input type="text" id="year" placeholder="YY" maxlength="2" onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="inputTransferYear()">
               <span class="erro-year"></span>
               </div>
             </div>
           </div>
           <div class="code-field" id="code-field">
             <label for="code"> CVC</label>
-            <input type="text" id="code" placeholder="e.g. 123" maxlength="3" onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <input type="text" id="code" placeholder="e.g. 123" maxlength="3" onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="inputTransferCode()">
             <span class="erro-code"></span>
           </div>
         </div>
@@ -60,22 +60,24 @@
         <div class="ether-1"></div>
         <div class="ether-2"></div>
       </div>
-      <div class="number-card" id="number-card">
-        0000 0000 0000 0000
+      <div class="number-card">
+        <input type="text" id="number-card" placeholder="0000 0000 0000 0000">
       </div>
       <div class="infoFooter-card">
         <div class="namePeople-card">
-          Jane Appleseed
+          <input type="text" id="namePeople-card" placeholder="Jane Appleseed">
         </div>
         <div class="dataValid-card">
-          00/00
+          <input type="text" id="monthValue" placeholder="00">
+          <input type="text" id="space" placeholder="/">
+          <input type="text" id="yearValue" placeholder="00">
         </div>
       </div>
     </div>
     <div class="card-back">
       <div class="belt-card-1"></div>
       <div class="belt-card2">
-        000
+        <input type="text" id="card-code" placeholder="000" dir="rtl">
       </div>
       <div class="writing-card">
         <div class="writing-line1">
