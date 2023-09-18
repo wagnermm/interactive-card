@@ -410,10 +410,10 @@ button:disabled {
         padding: 1rem !important;
     }
     .card-front {
-        left: 0;
+        left: 5vw;
     }
     .card-back {
-        left: 10vw;
+        left: 15vw;
     }
     .card-front, .card-back {
         width: 300px;
