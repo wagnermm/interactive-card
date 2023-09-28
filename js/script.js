@@ -52,7 +52,7 @@ for( let emFoco of nameInput ) {
 };
 
 // Input valid number
-let numberValid = /^\d{4} \d{4} \d{4} \d{4}$/;
+let numberValid = /^[0-9]{16}$/;
 const inputNumberValid = (element)=> {
     element.addEventListener('focusout', function() {
         if(this.value.match(numberValid)) {
@@ -93,7 +93,7 @@ for( let emFoco of monthInput ) {
 };
 
 // Input valid year
-let yearValid = /^[0-9]{2}$/;
+let yearValid = /^(2[3-9]|3[0-5])$/;
 const inputYearValid = (element)=> {
     element.addEventListener('focusout', function() {
         if(this.value.match(yearValid)) {
